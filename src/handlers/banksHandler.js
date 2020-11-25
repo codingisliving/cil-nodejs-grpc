@@ -4,6 +4,11 @@ const get = (req, res) => {
     res.send(banks.list());
 };
 
+const getOne = (req, res) => {
+    const { db: { banks } } = req;
+    res.send(banks.get(req.params.id));
+}
+
 const post = (req, res) => {
     const { db: { banks } } = req;
     try {
@@ -42,6 +47,7 @@ const remove = (req, res) => {
 
 module.exports = {
     get,
+    getOne,
     post,
     patch,
     remove
