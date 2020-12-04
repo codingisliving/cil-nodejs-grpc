@@ -1,7 +1,7 @@
 {
-  "name": "cil-nodejs-gql-2-ms",
+  "name": "cil-nodejs-gql-mock-ms",
   "version": "1.0.0",
-  "description": "Support source code for 2nd tutorial of \"How to Implement GraphQL in Microservices Using Node.js\"",
+  "description": "Support source code for tutorial of \"How to Implement GraphQL in Microservices Using Node.js\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
