@@ -12,7 +12,11 @@ const getOne = (req, res) => {
 const post = (req, res) => {
     const { db: { transactions } } = req;
     try {
-        const result = transactions.create(req.body);
+        const result = transactions.create({
+            ...req.body,
+            status: 'PENDING',
+            transactionDate: new Date()
+        });
         res.send(result);
     }
     catch(err) {
@@ -23,10 +27,11 @@ const post = (req, res) => {
 const patch = (req, res) => {
     const { db: { transactions } } = req;
     try {
-        const result = transactions.update({
-            id: req.params.id,
-            ...req.body
+        const transaction = transactions.get(req.params.id);
+        Object.keys(req.body).forEach((key) => {
+            transaction[`${key}`] = req.body[`${key}`];
         });
+        const result = transactions.update(transaction);
         res.send('SUCCESS');
     }
     catch(err) {

@@ -23,10 +23,11 @@ const post = (req, res) => {
 const patch = (req, res) => {
     const { db: { banks } } = req;
     try {
-        const result = banks.update({
-            id: req.params.id,
-            ...req.body
+        const bank = banks.get(req.params.id);
+        Object.keys(req.body).forEach((key) => {
+            bank[`${key}`] = req.body[`${key}`];
         });
+        const result = banks.update(bank);
         res.send('SUCCESS');
     }
     catch(err) {

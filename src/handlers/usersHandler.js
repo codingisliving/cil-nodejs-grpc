@@ -23,10 +23,11 @@ const post = (req, res) => {
 const patch = (req, res) => {
     const { db: { users } } = req;
     try {
-        const result = users.update({
-            id: req.params.id,
-            ...req.body
+        const user = users.get(req.params.id);
+        Object.keys(req.body).forEach((key) => {
+            user[`${key}`] = req.body[`${key}`];
         });
+        const result = users.update(user);
         res.send('SUCCESS');
     }
     catch(err) {
