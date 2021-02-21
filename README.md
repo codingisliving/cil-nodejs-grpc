@@ -1,5 +1,5 @@
-# cli-nodejs-gql-mock-ms
-Support source code for tutorial of "How to Implement GraphQL in Microservices Using Node.js" in https://codingisliving.com
+# cli-nodejs-grpc
+Source code for tutorial of "Using gRPC For Connecting Microservices" in https://codingisliving.com
 
 How to run:
 1. Run `npm i`.
