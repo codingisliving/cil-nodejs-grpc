@@ -73,8 +73,6 @@ const createUsersHandler = (db) => {
     }
 }
 
-module.exports = {
-    createUsersHandler
-};
+module.exports =  createUsersHandler;
 
 

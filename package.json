@@ -1,11 +1,11 @@
 {
   "name": "cil-nodejs-grpc",
   "version": "1.0.0",
-  "description": "Support source code for tutorial of \"How to Implement GraphQL in Microservices Using Node.js\"",
+  "description": "Support source code for tutorial of \"Using gRPC for connecting microservices\"",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node ./src/index.js",
+    "start": "node src/express/index.js",
     "start:grpc-server": "node ./src/grpc/server.js",
     "start:grpc-client": "node ./src/grpc/client.js"
   },

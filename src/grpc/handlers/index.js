@@ -1,11 +1,5 @@
-const { createUsersHandler } = require('./usersHandler');
-
-const createHandlers = (db) => {
-    return {
-        ...createUsersHandler(db)
-    }
-};
+const createUsersHandler = require('./usersHandler');
 
 module.exports = {
-    createHandlers
+    createUsersHandler
 };
