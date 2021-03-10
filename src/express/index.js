@@ -35,5 +35,5 @@ app.patch('/transactions/:id', dbMdw, transactionsHandler.patch);
 app.delete('/transactions/:id', dbMdw, transactionsHandler.remove);
 
 app.listen(port, () => {
-    console.log(`cil-nodejs-gql-2-ms listening at http://localhost:${port}`)
+    console.log(`cil-nodejs-grpc-express listening at http://localhost:${port}`)
 });
